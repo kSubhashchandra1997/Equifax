@@ -17,5 +17,9 @@ public class TestBase {
         }
     }
 
+    public String getProperty(String propertyKey){
+        return property.getProperty(propertyKey);
+    }
+
 
 }

@@ -12,12 +12,13 @@ import java.io.IOException;
 
 public class HttpClient {
 
-    public void get(String url) throws IOException {
+    public CloseableHttpResponse get(String url) throws IOException {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet(url);
         CloseableHttpResponse response = httpClient.execute(httpGet);
-        response.getStatusLine().getStatusCode();
-        String responseInString = EntityUtils.toString(response.getEntity(),"UTF-8");
-        JSONObject responseInJSON = new JSONObject(responseInString);
+        return response;
+        // response.getStatusLine().getStatusCode();
+       //String responseInString = EntityUtils.toString(response.getEntity(),"UTF-8");
+        //JSONObject responseInJSON = new JSONObject(responseInString);
     }
 }
